@@ -1,0 +1,68 @@
+.card_highlight {
+    display: flex;
+    align-items: self-start;
+    gap: 12px;
+    background-color: #000;
+    border-radius: 8px;
+}
+
+.info_detail {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    border: 1px solid; /* largura da borda */
+    border-image: linear-gradient(90deg, rgba(0,0,0,0.55) 0%, #ff0000 100%) 1;
+    width: 100%;
+    height: -webkit-fill-available;
+
+    h2 {
+        color: var(--text-brand);
+    }
+}
+
+.info_promo {
+    color: var(--text-brand);
+}
+
+.group_badge {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 8px;
+    border-radius: 42px;
+    width: fit-content;
+    font-size: 12px;
+}
+
+.badge.started {
+    background-color: var(--badge-started-bg);
+    color: var(--badge-started-text);
+}
+
+.badge.datefrom {
+    background-color: var(--badge-datefrom-bg);
+    color: var(--badge-datefrom-text);
+}
+
+.progress_full {
+    position: relative;
+    background-color: var(--text-secondary-brand);
+    height: 20px;
+    border-radius: 30px;
+}
+
+.progress_fit {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 20px;
+    border-radius: 30px;
+    background-color: var(--primary-color-brand);
+}

@@ -1,0 +1,20 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 24px;
+    background-color: var(--bg-footer);
+}
+
+.box_license {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-top: 1px solid 1px solid rgba(255,255,255,.16);
+    border-bottom: 1px solid 1px solid rgba(255,255,255,.16);
+    margin: 24px 0;
+    padding: 16px 0;
+
+    small {
+        color: var(--text-secondary-brand);
+    }
+}
