@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles and CSS variables */
+
+:root {
+  --bg-brand: #0a0a0a;
+  --text-brand: #ffffff;
+  --text-secondary-brand: #888888;
+  --primary-color-brand: #ff0d0d;
+  --badge-started-bg: #1f1f1f;
+  --badge-started-text: #ffffff;
+  --badge-datefrom-bg: #2c2c2c;
+  --badge-datefrom-text: #ffffff;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-brand);
+  color: var(--text-brand);
+  font-family: Arial, sans-serif;
+}
+
+.bttn_primary {
+  background-color: var(--primary-color-brand);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.bttn_secondary {
+  background-color: transparent;
+  color: var(--text-brand);
+  border: 1px solid var(--text-brand);
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+

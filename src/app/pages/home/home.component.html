@@ -1,3 +1,10 @@
-<div>
-    <app-highlights></app-highlights>
-</div>
+<app-hero></app-hero>
+
+<section class="container">
+  <app-highlights></app-highlights>
+
+  <div class="card-grid">
+    <app-card-highlight *ngFor="let card of cards"></app-card-highlight>
+  </div>
+</section>
+
