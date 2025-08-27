@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeroComponent } from '../../components/hero/hero.component';
 import { HighlightsComponent } from '../../components/highlights/highlights.component';
-import { CardHighlightComponent } from '../../components/highlights/card/card.component';
+import { PromoCardComponent } from '../../components/promo-card/promo-card.component';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +10,7 @@ import { CardHighlightComponent } from '../../components/highlights/card/card.co
     CommonModule,
     HeroComponent,
     HighlightsComponent,
-    CardHighlightComponent
+    PromoCardComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

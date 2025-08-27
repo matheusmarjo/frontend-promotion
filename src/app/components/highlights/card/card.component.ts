@@ -1,14 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NzTagModule } from 'ng-zorro-antd/tag';
-import { NzStatisticModule } from 'ng-zorro-antd/statistic';
-import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 import { interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-card-highlight',
   standalone: true,
-  imports: [CommonModule, NzTagModule, NzStatisticModule, NzGridModule],
+    imports: [CommonModule, NzButtonModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })
