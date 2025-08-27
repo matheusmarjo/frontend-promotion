@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+body, html {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: inherit;
+    padding: 0;
+
+    background-image: url('https://promocoes.marjosports.com.br/wp-content/uploads/2025/05/section-4.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+.bttn_primary {
+    background-color: var(--primary-color-brand);
+    color: var(--text-brand);
+    font-weight: 600;
+}
+
+.bttn_secondary {
+    background-color: transparent;
+    color: var(--text-brand);
+    font-weight: 600;
+}
