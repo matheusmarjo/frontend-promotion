@@ -1,0 +1,24 @@
+.section_promotions {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    padding: 24px;
+}
+
+.box_section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.group_bttns {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.group_cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 18px;
+}

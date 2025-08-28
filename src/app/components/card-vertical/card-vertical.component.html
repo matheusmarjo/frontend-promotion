@@ -1,0 +1,37 @@
+<div class="card_vertical">
+    <div class="card_top">
+        <img [class.card_image]="true" [src]="data.image_url" alt="Card Image" />
+
+        <div class="info_promo">
+            <div class="label" *ngIf="!ended">
+                Termina em:
+            </div>
+            <div class="value">
+                {{ timeRemaining }}
+            </div>
+
+            <div class="progress_full">
+                <div class="progress_fit" [style.width.%]="porcentageToEnd"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card_body">
+        <div>
+            {{ data.id_category }}
+        </div>
+
+        <h2>{{ data.title }}</h2>
+
+        <small>{{ data.subtitle }}</small>
+
+        <div class="group_bttns">
+            <button class="bttn_primary">
+                {{ data.name_button_cta }}
+            </button>
+            <button class="bttn_secondary">
+                Saiba mais
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,3 +1,24 @@
-<div>
+<div class="section_promotions">
     <app-highlights></app-highlights>
+
+    <div class="box_section">
+        <div class="group_bttns">
+            <button 
+                *ngFor="let item of allCategories"
+                [ngClass]="{
+                    'bttn_primary': item.id === selectedCategory,
+                    'bttn_dark': item.id !== selectedCategory
+                }"
+                (click)="selectCategory(item.id)"
+                >
+                {{ item.name }}
+            </button>
+        </div>
+    
+        <div class="group_cards">
+            @for (item of allPromotions; track item) {
+                <app-card-vertical [data]="item"></app-card-vertical>
+            }
+        </div>
+    </div>
 </div>

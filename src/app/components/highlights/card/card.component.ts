@@ -10,11 +10,11 @@ import { interval, Subscription } from 'rxjs';
   standalone: true,
   imports: [CommonModule, NzTagModule, NzStatisticModule, NzGridModule],
   templateUrl: './card.component.html',
-  styleUrl: './card.component.scss'
+  styleUrl: './card.component.scss',
 })
 export class CardHighlightComponent implements OnInit, OnDestroy {
   dateStart: Date = new Date('2025-08-27T03:00:56.370Z'); // início da promoção
-  dateEnd: Date   = new Date('2025-08-27T23:00:56.370Z'); // fim da promoção
+  dateEnd: Date = new Date('2025-08-27T23:00:56.370Z'); // fim da promoção
 
   dateNow: Date = new Date();
   porcentageToEnd = 100;
@@ -24,7 +24,7 @@ export class CardHighlightComponent implements OnInit, OnDestroy {
   private sub?: Subscription;
 
   ngOnInit(): void {
-    this.updateProgress();                    // primeira atualização imediata
+    this.updateProgress(); // primeira atualização imediata
     this.sub = interval(1000).subscribe(() => this.updateProgress()); // tick a cada 1s
   }
 
@@ -55,12 +55,14 @@ export class CardHighlightComponent implements OnInit, OnDestroy {
     // trata casos antes do início
     const clampedElapsed = Math.max(0, Math.min(totalDuration, elapsed));
 
-    this.porcentageToEnd = totalDuration > 0
-      ? (clampedElapsed / totalDuration) * 100
-      : 100;
+    this.porcentageToEnd =
+      totalDuration > 0 ? (clampedElapsed / totalDuration) * 100 : 100;
 
     // arredonda opcionalmente
-    this.porcentageToEnd = Math.max(0, Math.min(100, +this.porcentageToEnd.toFixed(2)));
+    this.porcentageToEnd = Math.max(
+      0,
+      Math.min(100, +this.porcentageToEnd.toFixed(2))
+    );
   }
 
   private calculateTimeRemaining() {

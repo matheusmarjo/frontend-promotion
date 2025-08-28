@@ -9,17 +9,16 @@
             <div class="badge datefrom">02 a 07/09</div>
         </div>
         <div class="info_promo">
-            <div class="label" *ngIf="!ended">
-              Termina em:
-            </div>
-            <div class="value">
-              {{ timeRemaining }}
-            </div>
-          
-            <div class="progress_full">
-              <div class="progress_fit" [style.width.%]="porcentageToEnd"></div>
-            </div>
+          <div class="label" *ngIf="!ended">
+            Termina em:
           </div>
-          
+          <div class="value">
+            {{ timeRemaining }}
+          </div>
+        
+          <div class="progress_full">
+            <div class="progress_fit" [style.width.%]="porcentageToEnd"></div>
+          </div>
+        </div>
     </div>
 </div>
