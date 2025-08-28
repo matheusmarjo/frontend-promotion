@@ -2,23 +2,22 @@
     <div class="card_top">
         <img [class.card_image]="true" [src]="data.image_url" alt="Card Image" />
 
-        <div class="info_promo">
-            <div class="label" *ngIf="!ended">
-                Termina em:
-            </div>
-            <div class="value">
-                {{ timeRemaining }}
+        <div class="info_promo" *ngIf="timeRemaining !== 'Período não definido'">
+            <div class="label">
+                <strong>{{ timeRemaining }}</strong>
             </div>
 
             <div class="progress_full">
                 <div class="progress_fit" [style.width.%]="porcentageToEnd"></div>
             </div>
         </div>
+
+        <div class="overlay"></div>
     </div>
 
     <div class="card_body">
-        <div>
-            {{ data.id_category }}
+        <div class="badge_category">
+            {{ data.categoria_fk.name }}
         </div>
 
         <h2>{{ data.title }}</h2>
@@ -26,12 +25,10 @@
         <small>{{ data.subtitle }}</small>
 
         <div class="group_bttns">
-            <button class="bttn_primary">
+            <a [href]="data.url_redirect_cta" class="bttn_primary">
                 {{ data.name_button_cta }}
-            </button>
-            <button class="bttn_secondary">
-                Saiba mais
-            </button>
+            </a>
+            <a [href]="'/detail/' + data.id" class="bttn_outline">Saiba mais</a>
         </div>
     </div>
 </div>

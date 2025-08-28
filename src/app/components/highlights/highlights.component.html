@@ -18,14 +18,8 @@
       autoplay-delay="3000"
       autoplay-disable-on-interaction="false"
     >
-      <swiper-slide>
-        <app-card-highlight></app-card-highlight>
-      </swiper-slide>
-      <swiper-slide>
-        <app-card-highlight></app-card-highlight>
-      </swiper-slide>
-      <swiper-slide>
-        <app-card-highlight></app-card-highlight>
+      <swiper-slide *ngFor="let item of data">
+        <app-card-highlight [data]="item"></app-card-highlight>
       </swiper-slide>
     </swiper-container>
 </div>    

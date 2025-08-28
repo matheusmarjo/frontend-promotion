@@ -2,12 +2,24 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    margin-bottom: 12px;
 
     h2 {
         color: var(--text-brand);
     }
+
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50px;
+        width: 30px;
+        height: 30px;
+        background-color: var(--primary-color-brand);
+
+        nz-icon {
+            display: flex;
+        }
+    }
 }
 
-.header_highlight {
-    margin-bottom: 12px;
-}

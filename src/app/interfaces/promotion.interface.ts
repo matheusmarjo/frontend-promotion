@@ -13,6 +13,14 @@ export interface PromotionI {
   url_redirect_cta: string;
   updatedAt: Date;
   createdAt: Date;
+  isHighlight: boolean;
+  categoria_fk: {
+    createdAt: Date;
+    id: string;
+    name: string;
+    updatedAt: Date;
+    url_image: string | null;
+  }
 }
 
 export type PromotionStatus = 'active' | 'inactive' | 'archived';

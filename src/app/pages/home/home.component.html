@@ -1,24 +1,49 @@
+<app-banner></app-banner>
+
 <div class="section_promotions">
-    <app-highlights></app-highlights>
+    <!-- <app-skeleton-horizontal></app-skeleton-horizontal> -->
+
+    <app-highlights [data]="allHighlightPromotions"></app-highlights>
 
     <div class="box_section">
-        <div class="group_bttns">
-            <button 
-                *ngFor="let item of allCategories"
-                [ngClass]="{
-                    'bttn_primary': item.id === selectedCategory,
-                    'bttn_dark': item.id !== selectedCategory
-                }"
-                (click)="selectCategory(item.id)"
+        <div class="group_input">
+            <div class="group_bttns">
+                <button 
+                    *ngFor="let item of allCategories"
+                    [ngClass]="{
+                        'bttn_primary': item.id === selectedCategory,
+                        'bttn_dark': item.id !== selectedCategory
+                    }"
+                    (click)="selectCategory(item.id)"
+                    >
+                    {{ item.name }}
+                </button>
+            </div>
+
+            <div class="group_search">
+                <input 
+                  [(ngModel)]="searchTerm"
+                  placeholder="Encontre sua oferta favorita"
+                  (input)="applyFilters()" 
+                />
+                <button 
+                  type="button" 
+                  class="bttn_primary roudend bttn_search"
+                  (click)="applyFilters()"
                 >
-                {{ item.name }}
-            </button>
+                  <nz-icon nzType="search" nzTheme="outline"></nz-icon>
+                </button>
+              </div>
+              
         </div>
     
         <div class="group_cards">
-            @for (item of allPromotions; track item) {
-                <app-card-vertical [data]="item"></app-card-vertical>
-            }
+            <!-- <app-skeleton-vertical></app-skeleton-vertical> -->
+
+            <app-card-vertical 
+                *ngFor="let item of filteredPromotions" 
+                [data]="item">
+            </app-card-vertical>
         </div>
     </div>
 </div>

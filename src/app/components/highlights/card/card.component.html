@@ -1,24 +1,45 @@
 <div class="card_highlight">
+  <div>
+    <img [src]="data.image_url" alt="Card Test" width="217px" height="224px" style="object-fit: contain;" />
+  </div>
+  <div class="info_detail">
     <div>
-        <img src="assets/card-test.png" alt="Card Test" />
+      <h2>{{ data.title }}</h2>
+      <h4>{{ data.subtitle }}</h4>
     </div>
-    <div class="info_detail">
-        <h2>Torneio de Mesa: Mais de 10.000 em prêmios</h2>
-        <div class="group_badge">
-            <div class="badge started">Iniciado</div>
-            <div class="badge datefrom">02 a 07/09</div>
+
+    <div class="group_badge">
+      <ng-template #statusBadge let-info="info">
+        <div class="badge" [style.backgroundColor]="info.color">
+          {{ info.text }}
         </div>
-        <div class="info_promo">
-          <div class="label" *ngIf="!ended">
-            Termina em:
-          </div>
-          <div class="value">
-            {{ timeRemaining }}
-          </div>
-        
-          <div class="progress_full">
-            <div class="progress_fit" [style.width.%]="porcentageToEnd"></div>
-          </div>
-        </div>
+      </ng-template>
+      
+      <!-- Usa o template passando o statusInfo -->
+      <ng-container 
+        *ngTemplateOutlet="statusBadge; context: { info: statusInfo }">
+      </ng-container>
+      
+      <div class="badge datefrom" *ngIf="data.end_date">{{ formattedString()  }}</div>
     </div>
+    <div class="info_promo" *ngIf="data.end_date">
+      <div class="label" *ngIf="!ended">
+        Termina em <strong>{{ timeRemaining }}</strong>
+      </div>
+      <div class="value" *ngIf="ended">
+        {{ timeRemaining }}
+      </div>
+
+      <div class="progress_full">
+        <div class="progress_fit" [style.width.%]="porcentageToEnd"></div>
+      </div>
+    </div>
+
+    <div class="group_bttns">
+      <a [href]="data.url_redirect_cta" class="bttn_primary" *ngIf="!ended">
+        {{ data.name_button_cta }}
+      </a>
+      <a [href]="'/detail/' + data.id" class="bttn_outline">Saiba mais</a>
+    </div>
+  </div>
 </div>

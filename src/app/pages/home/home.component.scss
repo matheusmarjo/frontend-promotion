@@ -1,24 +1,55 @@
 .section_promotions {
-    display: flex;
-    flex-direction: column;
-    gap: 42px;
-    padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+  padding: 24px;
 }
 
 .box_section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .group_bttns {
-    display: flex;
-    align-items: center;
-    gap: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .group_cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    gap: 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 32px;
+}
+
+.group_input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  input {
+    background-color: #000;
+    color: #fff;
+    padding: 12px;
+    border-radius: 60px;
+    border: 0;
+    min-width: 320px;
+  }
+
+  input::placeholder {
+    color: #676767;
+    opacity: 1;
+  }
+}
+
+.group_search {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.bttn_search {
+    position: absolute;
+    right: 4px;
 }

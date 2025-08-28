@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild, ElementRef } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild, ElementRef, Input } from '@angular/core';
 import { CardHighlightComponent } from './card/card.component';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { PromotionI } from '../../interfaces/promotion.interface';
 
 @Component({
   selector: 'app-highlights',
@@ -18,6 +19,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 })
 export class HighlightsComponent {
   @ViewChild('swiperEl', { static: true }) swiperEl!: ElementRef;
+  @Input() data!: PromotionI[];
 
   slideNext() {
     const swiper = this.swiperEl.nativeElement.swiper;
