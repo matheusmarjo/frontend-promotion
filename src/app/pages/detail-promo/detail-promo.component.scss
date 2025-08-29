@@ -1,0 +1,37 @@
+.banner_box {
+    border-bottom: 2px solid var(--primary-color-brand);
+}
+
+.container_box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 42px;
+
+    p {
+        color: var(--text-brand);
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}
+
+.group_header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    h2 {
+        color: var(--text-brand);
+        font-size: 24px;
+    }
+
+    small {
+        color: var(--text-secondary-brand);
+        font-size: 16px;
+    }
+
+    > a {
+        width: fit-content;
+        font-size: 16px;
+    }
+}

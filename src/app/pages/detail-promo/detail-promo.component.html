@@ -1,1 +1,18 @@
-<p>detail-promo works!</p>
+<div>
+    <div class="banner_box">
+        <img src="/assets/banner-1.png" alt="Banner Promo" class="banner_image" />
+    </div>
+
+    <div class="container_box">
+        <div class="group_header">
+            <h2>{{ dataPromotion.title }}</h2>
+            <small>{{ dataPromotion.subtitle }}</small>
+    
+            <a [href]="dataPromotion.url_redirect_cta" class="bttn_primary">
+                {{ dataPromotion.name_button_cta }}
+            </a>
+        </div>
+
+        <p>{{ dataPromotion.rule }}</p>
+    </div>
+</div>

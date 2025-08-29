@@ -53,5 +53,17 @@ export class PromotionService extends BaseService {
       })
     );
   }
-  
+
+  getById(id: string): Observable<PromotionI> {
+    return this.httpClient.get<PromotionI>(`${this.getBaseUrl()}${this.pathLogin}/${id}`).pipe(
+      map((value) => {
+        return value as PromotionI;
+      }),
+      catchError(error => {
+        return throwError(() => {
+          new Error(`Erro ao buscar promoção por ID: ${error.message}`);
+        });
+      })
+    );
+  }
 }
